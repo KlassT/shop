@@ -1,0 +1,15 @@
+{
+  "name": "kl4sst/shop",
+  "description": "description_text",
+  "minimum-stability": "dev",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "author's name",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+    "nesbot/carbon": "1.22.1"
+  }
+}
