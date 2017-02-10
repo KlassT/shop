@@ -50,6 +50,7 @@ try {
      */
     $application->registerModules([
         'frontend' => ['className' => 'App\Modules\Frontend\Module'],
+        'backend' => ['className' => 'App\Modules\Backend\Module'],
     ]);
 
     /**

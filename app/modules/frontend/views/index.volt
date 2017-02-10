@@ -101,6 +101,7 @@
     </div>
 </footer>
 <div class="alert"></div>
+<div class="loader" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.7); z-index: 99999; display: none;"></div>
 {{ javascript_include('http://code.jquery.com/jquery-latest.js') }}
 {{ javascript_include('js/jquery.bxslider.min.js') }}
 {{ javascript_include('js/owl.carousel.min.js') }}

@@ -1,6 +1,6 @@
 <?php
 
-namespace Application\Backend;
+namespace App\Modules\Backend;
 
 use Phalcon\DiInterface;
 use Phalcon\Loader;
@@ -22,8 +22,8 @@ class Module implements ModuleDefinitionInterface
         $loader = new Loader();
 
         $loader->registerNamespaces([
-            'Application\Backend\Controllers' => __DIR__ . '/controllers/',
-            'Application\Backend\Models'      => __DIR__ . '/models/'
+            'App\Modules\Backend\Controllers' => __DIR__ . '/controllers/',
+            'App\Modules\Backend\Models'      => __DIR__ . '/models/'
         ]);
 
         $loader->register();
@@ -82,12 +82,5 @@ class Module implements ModuleDefinitionInterface
 
             return new $dbAdapter($dbConfig);
         };
-
-        $di->set('dispatcher', function() {
-            $dispatcher = new Dispatcher();
-            $dispatcher->setDefaultNamespace('App\Modules\Backend\Controllers');
-
-            return $dispatcher;
-        });
     }
 }

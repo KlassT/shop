@@ -34,18 +34,19 @@ $(function () {
 
 function addToCart(product, count)
 {
+    var loader = $('.loader');
+    loader.show();
+    $('body').addClass('no-scroll');
     var xhr = new XMLHttpRequest();
     xhr.open('POST', 'cart/add/' + product + '/' + count);
     xhr.send();
     xhr.onreadystatechange = function () {
-        console.log('Hello');
         if(xhr.readyState != 4) return;
-
-        console.log(xhr.responseText);
-
         if(xhr.status == 200)
         {
             document.querySelector('.header--block__cart').innerHTML = xhr.responseText;
+            loader.hide();
+            $('body').removeClass('no-scroll');
             flashMessage('Товар успешно добавлен', 'success');
         }
     }
